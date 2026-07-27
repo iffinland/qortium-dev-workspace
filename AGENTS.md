@@ -24,6 +24,9 @@ separated.
 Agents MUST NOT commit, push, tag, release, publish, deploy, close issues, or
 perform other external mutations without explicit owner authorization.
 
+Agent selection and escalation follow
+[`docs/workflows/deepseek-primary-work-model.md`](docs/workflows/deepseek-primary-work-model.md).
+
 The old workspace-level
 `/home/iffi/VsCodec-Projects/Qortium/agents` directory is not canonical and is
 outside this repository and this migration.

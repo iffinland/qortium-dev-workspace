@@ -8,12 +8,13 @@ templates, and thin agent role overlays.
 ## Knowledge model
 
 ChatGPT, Codex, DeepSeek, and future agents share one global guide set under
-`agents/`; they do not maintain separate copies. ChatGPT can coordinate,
-review GitHub-backed evidence, and plan work. Local agents such as Codex can
-inspect project workspaces, implement authorized changes, and return structured
-evidence. DeepSeek can perform bounded investigation and secondary analysis.
-GitHub provides durable collaboration history, while local workspaces hold
-checked-out project and Qortium platform repositories.
+`agents/`; they do not maintain separate copies. ChatGPT scopes, plans, and
+reviews. DeepSeek is the default cost-efficient local implementation agent for
+routine development—it investigates, implements, and hands off locally. Codex
+escalates for high-risk architecture, data-integrity work, repeated failures,
+and independent release audits. GitHub provides durable collaboration history,
+while local workspaces hold checked-out project and Qortium platform
+repositories.
 
 The canonical hierarchy is:
 
@@ -57,12 +58,29 @@ qortium-dev-workspace/
 │   ├── decisions/
 │   ├── deepseek/
 │   └── workflows/
+│       └── deepseek-primary-work-model.md
 └── templates/
     ├── PROJECT-CONTEXT.md
     ├── AUDIT-ISSUE.md
     ├── IMPLEMENTATION-ISSUE.md
-    └── OWNER-HANDOFF.md
+    ├── OWNER-HANDOFF.md
+    ├── DEEPSEEK-TASK.md
+    └── DEEPSEEK-REVIEW.md
 ```
+
+## Default agent workflow
+
+```
+ChatGPT scopes and reviews
+→ DeepSeek investigates and implements locally
+→ owner/runtime validation
+→ GitHub
+→ Codex escalation when required
+```
+
+The full operating model—including risk levels, escalation rules, and pilot
+measurements—is defined in
+[`docs/workflows/deepseek-primary-work-model.md`](docs/workflows/deepseek-primary-work-model.md).
 
 ## Onboarding a project
 
