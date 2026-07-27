@@ -71,5 +71,17 @@ Default all external mutations to forbidden unless explicitly authorized.
 ## Stop and Escalation Conditions
 <!-- When to stop work and escalate to ChatGPT or Codex. -->
 
+## Report Storage
+- Project slug:
+- Report type:
+- Absolute report directory:
+- Expected report filename:
+- Report creation authorized: Yes
+
+Default `Report creation authorized` to `Yes` unless the owner explicitly
+requests no saved report.
+
+See [`docs/workflows/report-storage-policy.md`](../docs/workflows/report-storage-policy.md).
+
 ## Required Final Report
 <!-- Use `final-report-and-owner-handoff.md`. -->

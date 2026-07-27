@@ -21,4 +21,10 @@ deployment, issue closure, or other external mutation occurred.
 
 ## Owner actions required
 
+## Saved Report
+
+- Report type:
+- Absolute path:
+- File created:
+
 ## Remaining risks and follow-up issues

@@ -132,12 +132,22 @@ payloads, version semantics, identity behavior, or Home runtime contracts.
    authoritative platform sources.
 5. Separate verified fact, inference, and unknown.
 6. Define scope, out-of-scope work, acceptance criteria, risks, and validation.
-7. For a major architecture change, present the plan and obtain approval before
+7. Determine the report storage path:
+   - project slug;
+   - report type;
+   - absolute report directory
+     (`/home/iffi/VsCodec-Projects/Qortium/docs/<project-slug>/<report-type>/`);
+   - expected report filename
+     (`YYYY-MM-DD-<task-or-issue>-<report-type>.md`).
+   See [`docs/workflows/report-storage-policy.md`](../docs/workflows/report-storage-policy.md).
+   If the relevant directory does not exist, the agent may create it when
+   writing the report.
+8. For a major architecture change, present the plan and obtain approval before
    production implementation.
-8. Implement the smallest coherent change.
-9. Validate at the required levels.
-10. Review the full diff and final working tree.
-11. Report with a truthful completion status.
+9. Implement the smallest coherent change.
+10. Validate at the required levels.
+11. Review the full diff and final working tree.
+12. Report with a truthful completion status.
 
 ## Mandatory rules
 

@@ -27,6 +27,12 @@ perform other external mutations without explicit owner authorization.
 Agent selection and escalation follow
 [`docs/workflows/deepseek-primary-work-model.md`](docs/workflows/deepseek-primary-work-model.md).
 
+All AI-generated investigation, audit, implementation, review, runtime,
+validation, comparison, and owner-handoff reports MUST follow
+[`docs/workflows/report-storage-policy.md`](docs/workflows/report-storage-policy.md).
+The final response MUST state the exact absolute saved report path.
+Agents MUST NOT invent an alternative report location.
+
 The old workspace-level
 `/home/iffi/VsCodec-Projects/Qortium/agents` directory is not canonical and is
 outside this repository and this migration.

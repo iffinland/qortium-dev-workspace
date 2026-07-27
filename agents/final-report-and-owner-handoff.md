@@ -88,6 +88,22 @@ merged/removed/archived files, stale-reference search, and link validation.
 - MUST NOT claim embedded or live behavior from local preview/Core API alone.
 - MUST distinguish pre-existing owner files from task changes.
 - MUST NOT imply GitHub/QDN actions occurred when they did not.
+- Every final report MUST include:
+
+  ```
+  Report saved:
+  <absolute path>
+  ```
+
+  If no report file was created:
+
+  ```
+  Report saved:
+  Not created — <reason>
+  ```
+
+  MUST NOT claim that a report was saved unless the file exists.
+  Follow [`docs/workflows/report-storage-policy.md`](../docs/workflows/report-storage-policy.md).
 
 ## Validation
 

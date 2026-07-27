@@ -58,7 +58,8 @@ qortium-dev-workspace/
 │   ├── decisions/
 │   ├── deepseek/
 │   └── workflows/
-│       └── deepseek-primary-work-model.md
+│       ├── deepseek-primary-work-model.md
+│       └── report-storage-policy.md
 └── templates/
     ├── PROJECT-CONTEXT.md
     ├── AUDIT-ISSUE.md
@@ -91,6 +92,24 @@ identity, architecture, dependencies, commands, and validation requirements,
 then route work through
 [`agents/00-SESSION-START.md`](agents/00-SESSION-START.md). Add or change global
 guidance only when a rule is reusable across Qortium projects.
+
+## Report storage
+
+AI-generated work reports (audits, investigations, implementations, reviews,
+runtime diagnostics, validations, comparisons, and owner handoffs) MUST be
+stored under the canonical workspace report root:
+
+```
+workspace-root/docs/<project-slug>/
+```
+
+Application repository `docs/` directories are reserved for durable
+source-controlled project documentation (architecture, user guides, API docs,
+release instructions, migration specs).
+
+See [`docs/workflows/report-storage-policy.md`](docs/workflows/report-storage-policy.md)
+for the full policy, including directory layout, filename rules, and required
+final report path disclosure.
 
 ## Public-repository boundary
 

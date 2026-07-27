@@ -42,6 +42,12 @@
 ## Escalation Decision
 <!-- Whether to escalate to Codex. -->
 
+## Report Storage Compliance
+<!-- Verify before finalizing: -->
+<!-- [ ] Report path follows canonical policy (docs/workflows/report-storage-policy.md). -->
+<!-- [ ] The reported file exists on disk. -->
+<!-- [ ] No report was written into an application repository's docs/ directory. -->
+
 ## Final Verdict
 <!-- Exactly one of the following: -->
 <!-- PASS -->
