@@ -70,6 +70,10 @@ Run the clean verified build. Create a root-content artifact in the required
 format, exclude generated/test/cache/secrets, and record checksum, source
 commit, expected tag, and build commands.
 
+Artifact publication must be exact: record the source repository, commit,
+verify/build commands, artifact path/checksum, and intended
+service/name/identifier before any owner-authorized external write.
+
 ### 6. Distinguish RC and stable
 
 - A live build MAY remain an RC.
@@ -86,6 +90,9 @@ URLs, identifiers, hashes, and deployment verification.
 ## Mandatory rules
 
 - Release work MUST NOT replace runtime validation.
+- A deterministic artifact does not prove deployed behavior, and deployed
+  behavior does not prove stable release readiness until required embedded/live
+  checks pass.
 - MUST NOT create a tag, release, artifact, transaction, or QDN publication
   without requested scope.
 - MUST NOT commit a release ZIP merely because it exists.
@@ -113,3 +120,4 @@ URLs, identifiers, hashes, and deployment verification.
 - [`live-qdn-validation.md`](live-qdn-validation.md)
 - [`git-generated-files-and-hygiene.md`](git-generated-files-and-hygiene.md)
 - [`final-report-and-owner-handoff.md`](final-report-and-owner-handoff.md)
+- [`../docs/architecture/qortium-dapp-development-standard.md`](../docs/architecture/qortium-dapp-development-standard.md)

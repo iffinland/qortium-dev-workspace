@@ -83,6 +83,10 @@ For each entity define:
 Use
 [`qortium-architecture-and-data-integrity.md`](qortium-architecture-and-data-integrity.md).
 
+New applications MUST be Architecture V2-native from the first implementation.
+Do not start with a V1 whole-state write model and later add V2 shadow
+entities, compatibility publications, or parallel authority systems.
+
 ### 4. Design independent operations
 
 Evaluate independent authenticated records for edits, reactions, votes,
@@ -146,6 +150,8 @@ validation with each slice.
 
 - Current checked-out Home/Core behavior MUST be re-verified before dependent
   implementation.
+- Every feature MUST satisfy the canonical standard's Architecture V2-native
+  foundation checklist before implementation.
 - Web2 infrastructure MUST NOT be introduced by habit when Qortium-native
   capabilities meet the requirement.
 - Compatibility MUST be explicit, bounded, and tested.
@@ -175,3 +181,4 @@ validation with each slice.
 - [`qdn-publication-discovery-and-scaling.md`](qdn-publication-discovery-and-scaling.md)
 - [`runtime-diagnostics-and-performance.md`](runtime-diagnostics-and-performance.md)
 - [`qavs-versioning-and-release.md`](qavs-versioning-and-release.md)
+- [`../docs/architecture/qortium-dapp-development-standard.md`](../docs/architecture/qortium-dapp-development-standard.md)

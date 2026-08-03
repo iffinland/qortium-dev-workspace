@@ -40,6 +40,13 @@ the underlying Core behavior. Record the checked commits.
 
 Core capability does not imply Home bridge capability.
 
+Bridge response shape is command-specific. Do not assume that all actions return
+the same envelope. Some confirmed `FETCH_NODE_API` calls return an object with
+`body`, `data`, `ok`, and `status`, where the Core payload may be in
+`response.data`; other resource or name lookups may already return unwrapped
+payloads. Implement small production parsers per command and test those parsers
+with the real confirmed shapes.
+
 ### 2. Centralize a typed wrapper
 
 Use one service boundary that:
@@ -95,6 +102,8 @@ feedback for owner-facing diagnostic or share flows.
 ## Mandatory rules
 
 - Bridge actions and fields MUST be re-verified before implementation.
+- Bridge parser failures MUST NOT silently become valid domain values such as
+  zero balance, unknown owner, accepted transaction, or valid empty state.
 - Read retries MUST be bounded.
 - Ambiguous writes MUST NOT be blindly replayed.
 - Diagnostics MUST NOT include credentials, secrets, signatures, or private
@@ -123,3 +132,4 @@ feedback for owner-facing diagnostic or share flows.
 - [`qdn-publication-discovery-and-scaling.md`](qdn-publication-discovery-and-scaling.md)
 - [`runtime-diagnostics-and-performance.md`](runtime-diagnostics-and-performance.md)
 - [`live-qdn-validation.md`](live-qdn-validation.md)
+- [`../docs/architecture/qortium-dapp-development-standard.md`](../docs/architecture/qortium-dapp-development-standard.md)

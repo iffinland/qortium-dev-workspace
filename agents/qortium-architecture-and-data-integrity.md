@@ -32,6 +32,10 @@ validation, or current Home/Core source inspection.
 
 ## Workflow
 
+For new features and applications, define the complete Architecture V2-native
+foundation required by the canonical Qortium dApp Development Standard before
+implementation.
+
 ### 1. Establish authority
 
 For every entity determine:
@@ -135,8 +139,13 @@ timestamps.
 ## Mandatory rules
 
 - Decentralized MUST NOT mean unvalidated.
+- New applications MUST NOT begin with a V1 write model and later add V2 shadow
+  entities, compatibility publications, or parallel authority systems.
 - Unrelated publishers MUST NOT replace authoritative state.
 - Operation domains MUST NOT mutate each other's fields.
+- Legacy compatibility MUST NOT weaken Architecture V2 authority. If safe
+  legacy editing or migration is impossible, keep legacy data read-only and
+  explain why.
 - Partial discovery MUST NOT grant authority based on incomplete evidence.
 - Reference commits are traceability points, not permanent capability targets.
 
@@ -168,3 +177,4 @@ Test at minimum:
 - [`qdn-publication-discovery-and-scaling.md`](qdn-publication-discovery-and-scaling.md)
 - [`issue-driven-audit-and-refactor.md`](issue-driven-audit-and-refactor.md)
 - [`live-qdn-validation.md`](live-qdn-validation.md)
+- [`../docs/architecture/qortium-dapp-development-standard.md`](../docs/architecture/qortium-dapp-development-standard.md)

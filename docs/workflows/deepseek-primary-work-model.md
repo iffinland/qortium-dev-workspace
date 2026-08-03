@@ -26,8 +26,9 @@ work.
 
 - default daily local investigator and implementer;
 - documentation, testing, builds, diff review, and handoff;
-- one narrow task at a time;
-- no external mutation without authorization.
+- one fresh conversation per issue and one issue at a time;
+- no commit, push, publication, release, issue closure, or other external
+  mutation without authorization.
 
 ### Codex
 
@@ -110,8 +111,16 @@ At the end of the pilot, choose one:
 
 ```
 ChatGPT scopes and reviews
-→ DeepSeek investigates and implements locally
-→ owner/runtime validation
-→ GitHub
-→ Codex escalation when required
+-> fresh DeepSeek conversation for one issue
+-> concrete observed live symptom and expected behavior
+-> production-flow trace and read-only live-node investigation
+-> evidence-based root cause and minimal fix
+-> npm run verify and concise report
+-> owner embedded Qortium Home live validation
+-> one focused correction if live validation fails
+-> Codex independent audit/rescue if it still fails
 ```
+
+DeepSeek prompts MUST NOT over-direct the presumed root cause. They should give
+the observed symptom, expected behavior, relevant issue/context, required
+validation, and forbidden actions.

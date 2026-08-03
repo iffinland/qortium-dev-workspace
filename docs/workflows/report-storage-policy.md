@@ -16,9 +16,22 @@ All AI-generated work reports MUST be stored under:
 Agents MUST NOT place these reports in an individual application repository's
 `docs/` directory.
 
-## Report categories and directory layout
+## Issue report location
 
-Use these standard report-type subdirectories when applicable:
+All reports tied to an issue MUST use:
+
+```
+/home/iffi/VsCodec-Projects/Qortium/docs/<project-slug>/issues/
+```
+
+This includes issue investigations, implementations, runtime diagnostics,
+validation, agent reviews, corrections, and owner handoffs. Keep the report
+type in the filename rather than creating a different directory for each phase.
+
+## Non-issue report categories
+
+For work that is genuinely not tied to an issue, use these report-type
+subdirectories when applicable:
 
 | Directory                                   | Report type                                             |
 | ------------------------------------------- | ------------------------------------------------------- |
@@ -36,8 +49,8 @@ Also covered by this policy:
 - pilot measurements;
 - temporary technical findings that must be retained.
 
-Do not create every directory in advance. Create only the required project and
-report-type directories when a report is actually written.
+Do not create every directory in advance. Create only the required `issues/` or
+non-issue report-type directory when a report is actually written.
 
 ## Project slug rules
 
@@ -58,8 +71,8 @@ Examples:
 ```
 docs/video-center/audits/2026-07-27-thumbnail-discovery-audit.md
 docs/blogs/runtime/2026-07-27-startup-runtime-report.md
-docs/iffi-vaba-mees/reviews/2026-07-27-issue-12-review.md
-docs/discussion-boards/handoffs/2026-07-27-issue-16-handoff.md
+docs/iffi-vaba-mees/issues/2026-07-27-issue-12-review.md
+docs/discussion-boards/issues/2026-07-27-issue-16-handoff.md
 ```
 
 Use lowercase kebab-case throughout.
@@ -76,8 +89,9 @@ Use:
 
 For:
 
-- audit reports;
-- investigation reports;
+- issue-scoped reports under `issues/`;
+- non-issue audit reports;
+- non-issue investigation reports;
 - architecture review reports;
 - implementation reports;
 - runtime diagnostics;
@@ -112,8 +126,8 @@ Only for durable source-controlled documentation such as:
 
 - Missing `docs/<project-slug>/` directories are created automatically when the
   first report for that project is written.
-- Missing report-type subdirectories are created automatically when the first
-  report of that type is written.
+- Missing `issues/` or non-issue report-type subdirectories are created
+  automatically when the first matching report is written.
 - Agents MUST NOT pre-create unused directories.
 
 ## Prohibited locations
@@ -138,8 +152,10 @@ Every final report MUST include the exact absolute path where it was saved:
 
 ```
 Report saved:
-/home/iffi/VsCodec-Projects/Qortium/docs/<project-slug>/<report-type>/<filename>
+/home/iffi/VsCodec-Projects/Qortium/docs/<project-slug>/issues/<filename>
 ```
+
+For non-issue work, replace `issues` with the applicable report-type directory.
 
 If no report file was created, state:
 

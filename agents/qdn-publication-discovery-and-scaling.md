@@ -95,6 +95,12 @@ Indexes/caches:
 Derived refresh MUST NOT block first useful authoritative render unless needed
 for correctness.
 
+Every cache must define its key, success TTL, failure TTL, invalidation,
+force-refresh behavior, whether failed or null results are cached, and whether
+stale success can be used during incomplete discovery. A forced high-level
+refresh must bypass stale dependent caches when authority, discovery, identity,
+balance, or transaction evidence depends on them.
+
 ### 9. Publish safely
 
 Separate:
@@ -107,6 +113,13 @@ verified platform analysis. Verify exact service/name/identifier after
 publication. Treat accepted-but-unconfirmed writes as recoverable, not safely
 repeatable.
 
+For coordinated writes, the current Home action
+`PUBLISH_MULTIPLE_QDN_RESOURCES` uses one approval request but processes each
+resource as a separate transaction and returns independent `published` and
+`failures` arrays. Treat partial success explicitly. Do not describe this UI
+grouping as application-level or transaction-level atomicity. See the canonical
+standard for the verified request and response contract.
+
 ### 10. Plan scale tests
 
 Test more than one page, publisher floods, duplicate pages, large partitions,
@@ -118,6 +131,8 @@ limits.
 - Whole-board snapshots SHOULD NOT be rewritten for independent operations.
 - Indexes MUST NOT override entities.
 - Search completeness MUST be explicit.
+- Transient null, failed, or incomplete results MUST NOT poison authority
+  resolution after the bridge, node, or QDN resource recovers.
 - Read and write retries require different safety policies.
 - Exact current platform fields MUST be verified, not copied from historical
   guidance.
@@ -143,3 +158,4 @@ limits.
 - [`qortium-architecture-and-data-integrity.md`](qortium-architecture-and-data-integrity.md)
 - [`qortium-home-and-bridge.md`](qortium-home-and-bridge.md)
 - [`runtime-diagnostics-and-performance.md`](runtime-diagnostics-and-performance.md)
+- [`../docs/architecture/qortium-dapp-development-standard.md`](../docs/architecture/qortium-dapp-development-standard.md)

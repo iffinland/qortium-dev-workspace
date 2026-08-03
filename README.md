@@ -5,6 +5,9 @@ for AI-assisted Qortium development. It centralizes task routing, verified
 global development rules, project context, reusable issue and handoff
 templates, and thin agent role overlays.
 
+The durable cross-project rules are summarized in the
+[Qortium dApp Development Standard](docs/architecture/qortium-dapp-development-standard.md).
+
 ## Knowledge model
 
 ChatGPT, Codex, DeepSeek, and future agents share one global guide set under
@@ -55,6 +58,7 @@ qortium-dev-workspace/
 │   └── discussion-boards.md
 ├── docs/
 │   ├── architecture/
+│   │   └── qortium-dapp-development-standard.md
 │   ├── decisions/
 │   ├── deepseek/
 │   └── workflows/

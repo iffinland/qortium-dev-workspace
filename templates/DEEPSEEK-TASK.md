@@ -1,5 +1,9 @@
 # DeepSeek Task
 
+Start this task in a fresh DeepSeek conversation. Assign exactly one issue.
+Describe the observed symptom and expected behavior; do not instruct DeepSeek
+to assume a specific root cause.
+
 ## Repository
 <!-- Exact repository name and remote. -->
 
@@ -11,6 +15,12 @@
 
 ## Owner Request or GitHub Issue
 <!-- Exact owner request text or issue number and URL. -->
+
+## Observed Live Symptom
+<!-- Concrete owner-visible or live-runtime symptom. -->
+
+## Expected Behavior
+<!-- Exact behavior the owner should be able to validate. -->
 
 ## Primary Task Class
 <!-- One from the classification list. -->
@@ -30,11 +40,17 @@
 ## Verified Starting Facts
 <!-- Facts confirmed from source, not assumed. -->
 
+## Required Production-Flow Trace
+<!-- UI -> state/service -> bridge -> Core/QDN -> parser -> validation -> reducer -> render. -->
+
+## Required Read-Only Live Investigation
+<!-- Core/API, bridge response, QDN resource, transaction/name/wallet/balance evidence, as applicable. -->
+
 ## Unknowns and Owner Decisions
 <!-- Explicitly record what is unknown and what requires an owner decision. -->
 
 ## Objective
-<!-- One narrow issue or coherent task. -->
+<!-- One narrow issue only. -->
 
 ## Scope
 <!-- Concrete deliverables. -->
@@ -49,10 +65,10 @@
 <!-- Non-functional and process constraints. -->
 
 ## Required Validation
-<!-- Static, automated, build/runtime, embedded, live-QDN checks. -->
+<!-- Include npm run verify when defined and owner embedded Qortium Home live validation. -->
 
 ## Forbidden Actions
-<!-- Explicitly blocked actions. -->
+<!-- Block commit, push, publication, release, issue closure, and live mutation unless explicitly authorized. -->
 
 ## Authorizations
 
@@ -70,11 +86,12 @@ Default all external mutations to forbidden unless explicitly authorized.
 
 ## Stop and Escalation Conditions
 <!-- When to stop work and escalate to ChatGPT or Codex. -->
+<!-- If owner/live validation fails once, allow one focused correction in this same session. If it still fails, escalate to Codex. -->
 
 ## Report Storage
 - Project slug:
-- Report type:
-- Absolute report directory:
+- Report type (used in filename):
+- Absolute report directory: `/home/iffi/VsCodec-Projects/Qortium/docs/<project-slug>/issues/`
 - Expected report filename:
 - Report creation authorized: Yes
 

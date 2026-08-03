@@ -8,6 +8,9 @@ Every substantial task MUST begin with
 [`agents/00-SESSION-START.md`](agents/00-SESSION-START.md), then be classified
 using
 [`agents/01-TASK-CLASSIFICATION.md`](agents/01-TASK-CLASSIFICATION.md).
+All Qortium dApp work MUST follow the shared
+[`docs/architecture/qortium-dapp-development-standard.md`](docs/architecture/qortium-dapp-development-standard.md)
+standard.
 After classification, read:
 
 1. the matching root-level `projects/<project>.md`;

@@ -33,12 +33,15 @@ Determine and record:
 4. current commit;
 5. working-tree state, including staged, unstaged, untracked, and generated
    files;
-6. task class;
-7. owner request or issue number;
-8. matching project file;
-9. required global guides;
-10. authoritative Home/Core repositories required;
-11. validation level required.
+6. applicable
+   [`Qortium dApp Development Standard`](../docs/architecture/qortium-dapp-development-standard.md)
+   requirements;
+7. task class;
+8. owner request or issue number;
+9. matching project file;
+10. required global guides;
+11. authoritative Home/Core repositories required;
+12. validation level required.
 
 ## Mandatory baseline
 
@@ -127,27 +130,30 @@ payloads, version semantics, identity behavior, or Home runtime contracts.
 
 1. Establish the baseline and preserve existing changes.
 2. Classify the task.
-3. Read only the matching project file and routed guides.
-4. Read the exact issue, prerequisites, relevant source, and current
+3. Apply the shared
+   [`Qortium dApp Development Standard`](../docs/architecture/qortium-dapp-development-standard.md).
+4. Read only the matching project file and routed guides.
+5. Read the exact issue, prerequisites, relevant source, and current
    authoritative platform sources.
-5. Separate verified fact, inference, and unknown.
-6. Define scope, out-of-scope work, acceptance criteria, risks, and validation.
-7. Determine the report storage path:
+6. Separate verified fact, inference, and unknown.
+7. Define scope, out-of-scope work, acceptance criteria, risks, and validation.
+8. Determine the report storage path:
    - project slug;
-   - report type;
+   - `issues/` for issue-scoped work, otherwise report type;
    - absolute report directory
-     (`/home/iffi/VsCodec-Projects/Qortium/docs/<project-slug>/<report-type>/`);
+     (`/home/iffi/VsCodec-Projects/Qortium/docs/<project-slug>/issues/` for
+     issue work);
    - expected report filename
      (`YYYY-MM-DD-<task-or-issue>-<report-type>.md`).
    See [`docs/workflows/report-storage-policy.md`](../docs/workflows/report-storage-policy.md).
    If the relevant directory does not exist, the agent may create it when
    writing the report.
-8. For a major architecture change, present the plan and obtain approval before
+9. For a major architecture change, present the plan and obtain approval before
    production implementation.
-9. Implement the smallest coherent change.
-10. Validate at the required levels.
-11. Review the full diff and final working tree.
-12. Report with a truthful completion status.
+10. Implement the smallest coherent change.
+11. Validate at the required levels.
+12. Review the full diff and final working tree.
+13. Report with a truthful completion status.
 
 ## Mandatory rules
 
@@ -159,6 +165,8 @@ payloads, version semantics, identity behavior, or Home runtime contracts.
   validation are satisfied.
 - MUST NOT treat architecture tests as proof of runtime UX.
 - MUST NOT treat local preview as embedded Home or live QDN validation.
+- MUST NOT treat automated checks, production build, exact artifact creation,
+  or agent self-report as proof of live Qortium Home behavior.
 - MUST NOT recommend copying and progressively converting an old Qortal
   codebase for a new Qortium application. Extract requirements, design
   Qortium-native architecture, build cleanly, and migrate only validated needs.
@@ -187,5 +195,6 @@ Use only scripts actually defined by the project.
 
 - [`01-TASK-CLASSIFICATION.md`](01-TASK-CLASSIFICATION.md)
 - [`README.md`](README.md)
+- [`../docs/architecture/qortium-dapp-development-standard.md`](../docs/architecture/qortium-dapp-development-standard.md)
 - [`live-qdn-validation.md`](live-qdn-validation.md)
 - [`final-report-and-owner-handoff.md`](final-report-and-owner-handoff.md)

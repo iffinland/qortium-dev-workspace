@@ -86,12 +86,17 @@ Validate the exact deployed resource:
 7. Distinguish inference from direct observation.
 8. Preserve owner-exported reports as evidence when Home is not automatable.
 
+For owner-visible production bugs, use the complete validation chain in the
+canonical Qortium dApp Development Standard.
+
 ## Mandatory rules
 
 - Automated tests do not substitute for embedded Home.
 - Vite preview does not substitute for live QDN.
 - Core/API timing does not prove embedded first render.
 - A release artifact does not prove deployment.
+- TypeScript, lint, unit tests, mocked integration tests, `npm run verify`,
+  production build, and agent self-report do not prove production behavior.
 - MUST NOT claim live validation that was not performed.
 - An issue requiring live validation MUST remain open until the owner performs
   and confirms the required live check.
@@ -115,3 +120,4 @@ the tested source/artifact.
 - [`qortium-home-and-bridge.md`](qortium-home-and-bridge.md)
 - [`qavs-versioning-and-release.md`](qavs-versioning-and-release.md)
 - [`final-report-and-owner-handoff.md`](final-report-and-owner-handoff.md)
+- [`../docs/architecture/qortium-dapp-development-standard.md`](../docs/architecture/qortium-dapp-development-standard.md)

@@ -7,6 +7,11 @@ development. It supports new applications, existing-application audits,
 issue-driven implementation, runtime diagnosis, QDN design, Home integration,
 live validation, and releases.
 
+The shared
+[`Qortium dApp Development Standard`](../docs/architecture/qortium-dapp-development-standard.md)
+is the durable cross-project standard. The files in this directory route and
+apply that standard by task class.
+
 ## Use when
 
 Start every substantial repository task with
@@ -103,6 +108,8 @@ every substantial task
 
 - Qortium Home and Core behavior MUST be verified from their current checked-out
   sources before implementation depends on it.
+- Live Qortium Home validation is the final owner-visible truth for production
+  behavior; automated checks and clean builds are not enough.
 - Project-specific facts MUST stay under the root-level `projects/` directory.
 - One task SHOULD normally implement one issue.
 - Agents MUST NOT commit, push, tag, release, or publish without explicit owner
