@@ -146,6 +146,35 @@ Choose current tooling from verified project requirements. Do not assume
 or Qortal routes. Centralize Home/QDN clients, keep UI bridge-free, and add
 validation with each slice.
 
+### 12. Perform browser runtime smoke validation
+
+Successful typecheck, build, lint, formatting, and static inspection are NOT
+sufficient evidence that a Qortium dApp is runtime-correct.
+
+For any change that affects the application shell, providers, contexts,
+routing, bridge integration, authentication initialization, global state,
+external-store subscriptions, or startup/runtime initialization, perform a
+browser runtime smoke test before declaring the work complete.
+
+At minimum verify:
+
+- the application mounts successfully;
+- the initial public route renders usable UI;
+- there are no uncaught application errors in the browser console;
+- provider/context initialization does not enter render/update loops;
+- external-store snapshots remain stable while state is unchanged;
+- basic public-route navigation does not crash;
+- refresh/direct-route startup behaves as intended for the current routing model.
+
+When the implementation depends on Qortium Home bridge or embed behavior, local
+browser validation MUST be followed by an embedded Qortium Home runtime test at
+the required validation level. A local Vite/preview success alone does not prove
+Qortium integration correctness.
+
+If direct browser or embedded runtime access is unavailable, the report MUST
+state that runtime validation remains unperformed; build/typecheck success MUST
+NOT be reported as equivalent runtime validation.
+
 ## Mandatory rules
 
 - Current checked-out Home/Core behavior MUST be re-verified before dependent
@@ -156,6 +185,8 @@ validation with each slice.
   capabilities meet the requirement.
 - Compatibility MUST be explicit, bounded, and tested.
 - User-visible runtime success criteria MUST coexist with architecture tests.
+- Browser/runtime smoke validation is mandatory for app-shell/provider/router/
+  bridge/startup changes before completion may be claimed.
 - A new app MUST NOT inherit an old app's version automatically.
 
 ## Validation
@@ -163,6 +194,8 @@ validation with each slice.
 - Review the entity/operation model and identifier constraints.
 - Test unauthorized publishers, duplicates, conflicts, missing data, partial
   discovery, stale responses, and large datasets.
+- Run compile/build/lint/static checks applicable to the project.
+- Run browser runtime smoke validation for app startup and user-visible routing.
 - Validate at the levels defined in `live-qdn-validation.md`.
 - Confirm first usable flows in the actual intended runtime.
 
@@ -172,6 +205,8 @@ validation with each slice.
 - Authority, identifiers, operations, scaling, Home integration, observability,
   and release policy are designed from current evidence.
 - No unreviewed Qortal runtime assumptions entered the implementation.
+- Required browser/runtime smoke validation has passed, or the report explicitly
+  marks it as outstanding because the required environment was unavailable.
 - Owner-visible acceptance criteria pass at required validation levels.
 
 ## Related files
