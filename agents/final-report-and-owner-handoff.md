@@ -53,7 +53,9 @@ the owner-live-validation status until confirmed.
 4. Separate direct evidence, inference, unavailable evidence, and advisory.
 5. Choose status from the vocabulary.
 6. State whether the issue can close and why.
-7. Give the owner only exact remaining actions.
+7. Save the substantial report to the canonical workspace report location.
+8. Give the owner only a concise chat summary, exact remaining actions, and the
+   absolute path of the saved report.
 
 ## Report fields
 
@@ -88,6 +90,15 @@ merged/removed/archived files, stale-reference search, and link validation.
 - MUST NOT claim embedded or live behavior from local preview/Core API alone.
 - MUST distinguish pre-existing owner files from task changes.
 - MUST NOT imply GitHub/QDN actions occurred when they did not.
+- Substantial reports MUST be written to the canonical report location defined
+  by [`docs/workflows/report-storage-policy.md`](../docs/workflows/report-storage-policy.md).
+- Agents MUST NOT use the chat response as the sole storage location for a
+  substantial report.
+- Agents MUST NOT print the full saved report into chat unless the owner
+  explicitly asks to see the full report there.
+- The normal chat handoff MUST stay concise and contain only the final status,
+  key findings or completed work, validation summary, unresolved blockers or
+  owner actions, and the exact absolute path of the saved report.
 - Every final report MUST include:
 
   ```
@@ -115,9 +126,13 @@ and live-validation evidence. Ensure all linked local files exist.
 - Status matches the strongest completed evidence.
 - Files, validations, limitations, and owner actions are exact.
 - Issue closure recommendation follows its completion requirement.
+- A substantial report exists in the canonical workspace report location.
+- The chat handoff is concise and points to the saved report instead of
+  duplicating it.
 
 ## Related files
 
 - [`00-SESSION-START.md`](00-SESSION-START.md)
 - [`live-qdn-validation.md`](live-qdn-validation.md)
 - [`git-generated-files-and-hygiene.md`](git-generated-files-and-hygiene.md)
+- [`../docs/workflows/report-storage-policy.md`](../docs/workflows/report-storage-policy.md)
