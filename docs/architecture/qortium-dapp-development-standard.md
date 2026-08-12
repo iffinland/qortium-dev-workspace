@@ -262,6 +262,77 @@ Reports must distinguish:
 Do not close or recommend closing an issue that requires owner live validation
 until that validation is confirmed.
 
+## 11. Qortium Platform Integration Is Reference-First
+
+Platform-level integration MUST NOT be designed from memory when current
+working Qortium implementations already exist.
+
+Before implementing or materially changing any of the following, search the
+current checked-out Qortium repositories and working Qortium dApps for proven
+reference implementations:
+
+- Qortium Home/QDN bridge bootstrap and request transport;
+- bridge tokens, injected globals, request/response envelopes, and errors;
+- selected account/authentication and account-change handling;
+- registered-name and publisher identity resolution;
+- owner/admin authorization and owner-only navigation;
+- embedded routing, `_qdnBase`, basename, and dynamic QDN render paths;
+- QDN publication, source-token/file-path flows, discovery, fetching, status,
+  metadata, URLs, and deletion;
+- Home settings, display settings, share/navigation, clipboard, and other
+  platform capabilities.
+
+The required sequence is:
+
+```text
+platform requirement or live symptom
+-> search current Qortium Home/Core and working dApps
+-> identify one or more proven reference implementations
+-> document the exact runtime contract
+-> compare the target app against the reference as a subsystem
+-> reuse or adapt the proven pattern
+-> implement the complete integration change
+-> run focused automated checks
+-> run one end-to-end runtime smoke test
+```
+
+Do NOT default to:
+
+```text
+invent wrapper
+-> observe one symptom
+-> patch one field
+-> retest
+-> discover next missing field
+-> repeat
+```
+
+For bridge/auth/routing/QDN infrastructure, agents SHOULD inspect the complete
+integration boundary together rather than debugging isolated lines unless a
+working-reference comparison proves the rest of the subsystem already matches.
+
+Classify every proposed integration solution as:
+
+- **Direct reuse** — copy the proven Qortium mechanism with only project-specific
+  adaptation;
+- **Adaptation** — preserve the verified Qortium contract behind the app's own
+  abstraction layer;
+- **Project-specific implementation** — allowed only when no current Qortium
+  reference covers the requirement, with the reason documented.
+
+A working reference MUST be preferred over speculative diagnostics or custom
+platform plumbing. Temporary diagnostics are appropriate only after the
+reference comparison has been performed and a runtime uncertainty genuinely
+remains.
+
+Reference-first does not mean blindly copying obsolete code. The reference must
+be current, Qortium-native, and checked against the present Home/Core behavior.
+When multiple working implementations differ, determine which one matches the
+current runtime and application context before adapting it.
+
+Reports for platform-integration work MUST identify the repositories/files used
+as references and distinguish verified reuse from newly designed behavior.
+
 ## Related Guides
 
 - [`../../agents/00-SESSION-START.md`](../../agents/00-SESSION-START.md)
