@@ -120,6 +120,54 @@ From current Home source verify bridge detection, selected account, registered
 names, active publisher, read/write actions, approval/signing, display settings,
 language, embedded base routing, share parameters, and clipboard constraints.
 
+### 7A. Find working Qortium references before implementing platform integration
+
+Before writing or materially changing bridge, authentication, account handling,
+routing, owner/admin integration, QDN publication/discovery, or other Home/Core
+plumbing, search the current checked-out Qortium repositories and working dApps
+for existing proven implementations.
+
+Do not stop at one symbol match. Inspect the surrounding integration flow and,
+when practical, compare more than one working app or Home/Core implementation.
+
+For each platform concern, record:
+
+- repository and file;
+- function/component or integration boundary;
+- exact request/event/runtime contract it proves;
+- whether the target app can directly reuse it, adapt it, or genuinely needs
+  project-specific behavior.
+
+Use this sequence:
+
+```text
+platform requirement
+-> search current working Qortium implementations
+-> identify proven reference pattern
+-> compare target app against that pattern
+-> reuse/adapt the complete integration boundary
+-> validate the resulting end-to-end flow
+```
+
+Do not invent a fresh wrapper from memory and then discover the contract one
+field at a time through live failures when a current working implementation was
+available to inspect.
+
+Typical reference-first concerns include:
+
+- `postMessage` bridge envelopes and bridge tokens;
+- selected account and account-change events;
+- auth loading/error/unauthenticated state;
+- registered names and publisher identity;
+- owner/admin visibility and authorization;
+- `_qdnBase` and embedded routing;
+- QDN publish/source-token/search/fetch/status/metadata/URL/delete actions;
+- Home settings and navigation/share behavior.
+
+Reference-first does not permit blind copying of obsolete Qortal or stale
+Qortium code. Confirm that the chosen reference matches the current checked-out
+Home/Core runtime before adapting it.
+
 ### 8. Define publication paths
 
 Separate small inline payloads from current verified source-token/file-path
@@ -133,6 +181,10 @@ Define startup phases, explicit loading states, timeouts, retry budgets,
 stale-result rejection, first useful render, and an optional bounded in-app
 diagnostic mechanism.
 
+Diagnostics are not a substitute for checking working Qortium references first.
+Use temporary instrumentation only when a reference comparison leaves a genuine
+runtime uncertainty.
+
 ### 10. Plan release authority
 
 Identify current QAVS source, version authority, synchronization points, RC
@@ -145,6 +197,10 @@ Choose current tooling from verified project requirements. Do not assume
 `create-qortal-app`, qapp-core, `GlobalProvider`, Qortal authentication hooks,
 or Qortal routes. Centralize Home/QDN clients, keep UI bridge-free, and add
 validation with each slice.
+
+For platform primitives, bootstrap from the verified reference implementation
+identified in step 7A rather than constructing an independent contract from
+memory.
 
 ### 12. Perform browser runtime smoke validation
 
@@ -179,6 +235,11 @@ NOT be reported as equivalent runtime validation.
 
 - Current checked-out Home/Core behavior MUST be re-verified before dependent
   implementation.
+- Platform-level Qortium integration MUST be reference-first: search current
+  working Qortium implementations before designing bridge/auth/routing/QDN
+  plumbing from memory.
+- When a proven current Qortium pattern exists, reuse or adapt it before
+  proposing project-specific platform infrastructure.
 - Every feature MUST satisfy the canonical standard's Architecture V2-native
   foundation checklist before implementation.
 - Web2 infrastructure MUST NOT be introduced by habit when Qortium-native
@@ -192,6 +253,8 @@ NOT be reported as equivalent runtime validation.
 ## Validation
 
 - Review the entity/operation model and identifier constraints.
+- For platform primitives, record the working Qortium references used and audit
+  the target integration as a subsystem before isolated symptom debugging.
 - Test unauthorized publishers, duplicates, conflicts, missing data, partial
   discovery, stale responses, and large datasets.
 - Run compile/build/lint/static checks applicable to the project.
@@ -204,6 +267,8 @@ NOT be reported as equivalent runtime validation.
 - Product and non-goals are explicit.
 - Authority, identifiers, operations, scaling, Home integration, observability,
   and release policy are designed from current evidence.
+- Platform integration identifies and uses current working Qortium references,
+  or explicitly documents why no suitable reference exists.
 - No unreviewed Qortal runtime assumptions entered the implementation.
 - Required browser/runtime smoke validation has passed, or the report explicitly
   marks it as outstanding because the required environment was unavailable.
