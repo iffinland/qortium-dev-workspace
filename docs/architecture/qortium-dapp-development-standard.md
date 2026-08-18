@@ -333,6 +333,117 @@ current runtime and application context before adapting it.
 Reports for platform-integration work MUST identify the repositories/files used
 as references and distinguish verified reuse from newly designed behavior.
 
+## 12. Autonomous Phase Execution Loop
+
+For substantial implementation phases, prefer one autonomous phase controller
+over repeated human-mediated micro-prompts when the agent has sufficient local
+context, repository access, tests, reference sources, and runtime evidence.
+
+The objective is not speed. The objective is to take a phase from its current
+state to the strongest validation state the available environment can prove,
+while minimizing unnecessary owner intervention.
+
+A phase controller SHOULD execute this loop autonomously:
+
+```text
+read authoritative phase spec and current worktree
+-> inspect current Qortium references
+-> implement the phase or next coherent correction
+-> run automated validation
+-> switch to an adversarial reviewer role
+-> audit the implementation against the phase exit criteria
+-> classify findings by severity
+-> fix all in-scope blocker/high findings
+-> run complete validation again
+-> investigate live Core/QDN evidence when relevant
+-> perform available runtime validation
+-> repeat until no known phase blocker remains
+```
+
+The agent MUST NOT stop merely because typecheck, unit tests, lint, or build
+passes. After every substantial implementation pass it must re-read the phase
+exit criteria and perform an adversarial self-audit that assumes its own
+implementation may still be wrong.
+
+When the self-audit finds an in-scope blocker or high-severity correctness
+problem, the default behavior is to fix it and repeat the complete validation
+cycle without returning to the owner for routine direction.
+
+The autonomous loop SHOULD include, where applicable:
+
+- reference-first verification against current Home/Core and working dApps;
+- domain/data-integrity checks;
+- publication and reload paths;
+- cache, account-switch, and stale-async behavior;
+- React/provider/store lifecycle behavior;
+- failure, retry, partial-success, and recovery paths;
+- read-only live Core/QDN investigation;
+- local runtime/browser smoke;
+- embedded Qortium Home validation when the execution environment supports it.
+
+Live evidence must be preferred over inference. If an SSH tunnel, local Core
+API, or live QDN resource is already available, agents SHOULD use it directly
+for read-only verification instead of asking the owner to manually inspect
+state that the agent can inspect itself.
+
+Autonomy has two separate permission layers:
+
+1. **Task authorization** — the prompt or project rules state what the agent is
+   allowed to inspect, modify, publish, sign, delete, commit, push, or otherwise
+   mutate.
+2. **Execution-environment authorization** — the harness/CLI must be configured
+   so routine authorized shell, filesystem, network, tunnel, and test operations
+   do not pause for manual approval.
+
+Prompt-level wording such as "full access" cannot override a restrictive
+sandbox or approval mode. For unattended autonomous work, both layers must be
+configured consistently. If the environment still requires manual approval for
+an otherwise-authorized routine action, the report must classify that as an
+execution-environment limitation rather than a missing implementation decision.
+
+Autonomous execution does NOT grant unlimited external mutation authority.
+Unless explicitly authorized, the agent must still stop before publication,
+signing, live transactions, destructive deletion, commit/push, release, or
+other external mutations. When an owner explicitly grants a bounded test
+namespace or deployment target, the agent may use that target only within the
+stated scope and must record exact provenance and results.
+
+A phase is NOT complete merely because the autonomous loop reaches a clean local
+state. Completion status must distinguish at least:
+
+- **IMPLEMENTED** — code exists;
+- **LOCAL/AUTOMATED VERIFIED** — local checks pass;
+- **READY FOR OWNER VALIDATION** — no known implementation blocker remains but a
+  required owner/live step is unavailable to the agent;
+- **COMPLETE** — all required validation levels, including embedded/live owner
+  evidence where required, have passed.
+
+The preferred stop conditions for an autonomous phase controller are:
+
+1. **READY FOR OWNER VALIDATION / CLOSURE** — no known in-scope implementation
+   blocker remains and only explicit owner/live validation is outstanding;
+2. **OWNER DECISION REQUIRED** — a genuine product/architecture decision is
+   absent from authoritative specs and cannot be safely inferred;
+3. **ENVIRONMENT BLOCKER** — a required capability is unavailable and no
+   equivalent verification route exists.
+
+Routine command execution, testing, source inspection, read-only live-node
+queries, and in-scope local fixes are not valid reasons to stop when they are
+authorized and technically available.
+
+The final phase report MUST record:
+
+- starting worktree state;
+- authoritative specs and Qortium references used;
+- autonomous cycles performed;
+- material findings discovered after initial implementation;
+- root causes and fixes;
+- tests and final validation results;
+- live Core/QDN/runtime evidence actually obtained;
+- external mutations performed, if explicitly authorized;
+- exact remaining owner validation;
+- final phase status using the validation states above.
+
 ## Related Guides
 
 - [`../../agents/00-SESSION-START.md`](../../agents/00-SESSION-START.md)
