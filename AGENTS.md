@@ -4,6 +4,23 @@ This repository is the canonical shared control and knowledge repository for
 Qortium development. It contains documentation and workflows, not project
 source code or secrets.
 
+## Mandatory operating contract
+
+The canonical standard is the detailed source of truth; this is the minimum.
+
+- Current Qortium Home/Core is the reference truth. Do not design platform
+  behavior from memory.
+- Autonomous implementation must end with an adversarial self-audit and
+  remediation of confirmed BLOCKER/HIGH findings.
+- A green automated suite is not enough. Owner product/runtime validation is a
+  separate gate before completion.
+- Platform-boundary defects must be traced to the first confirmed mismatch and
+  classified before any dApp workaround.
+- Full-access execution does not imply commit/push/tag/release/publish/deploy/
+  issue-closure authority; explicit owner authorization remains required.
+- Reports are handoff artifacts and must follow the canonical report-storage
+  policy.
+
 Every substantial task MUST begin with
 [`agents/00-SESSION-START.md`](agents/00-SESSION-START.md), then be classified
 using
@@ -20,12 +37,7 @@ After classification, read:
 Global guides are shared and MUST NOT be duplicated per agent. Project-specific
 facts belong only under `projects/`.
 
-Before platform-dependent implementation, verify current Qortium Home and Core
-source. Keep verified facts, inference, unknowns, and owner decisions clearly
-separated.
-
-Agents MUST NOT commit, push, tag, release, publish, deploy, close issues, or
-perform other external mutations without explicit owner authorization.
+Keep verified facts, inference, unknowns, and owner decisions clearly separated.
 
 Agent selection and escalation follow
 [`docs/workflows/deepseek-primary-work-model.md`](docs/workflows/deepseek-primary-work-model.md).

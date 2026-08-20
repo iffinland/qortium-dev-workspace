@@ -33,6 +33,10 @@ Do not inflate a small answer with irrelevant sections. Do not report
 
 ## Status vocabulary
 
+Project/phase progress follows the canonical standard statuses (`NOT STARTED`,
+`IMPLEMENTED`, `LOCAL/AUTOMATED VERIFIED`, `READY FOR OWNER VALIDATION`,
+`COMPLETE`). This section defines the final handoff status.
+
 Use exactly one:
 
 - `COMPLETE`
@@ -40,10 +44,25 @@ Use exactly one:
 - `IMPLEMENTED — OWNER LIVE VALIDATION REQUIRED`
 - `PARTIALLY COMPLETE`
 - `NOT COMPLETE`
+- `OWNER DECISION REQUIRED`
+- `ENVIRONMENT BLOCKER`
+- `PLATFORM DEPLOYMENT REQUIRED`
 
 `COMPLETE` means all mandatory implementation and validation requirements are
 satisfied. Advisories are non-blocking. Mandatory live verification always uses
-the owner-live-validation status until confirmed.
+the owner-live-validation status until confirmed. The last three states are
+terminal non-completion states, not synonyms for `NOT COMPLETE`.
+
+Do not mark a task `COMPLETE` merely because tests passed, code exists, or a
+platform patch exists locally but has not been deployed where runtime proof
+requires it. When a task spans multiple components, report each component
+separately, for example:
+
+```text
+app implementation = ready
+platform patch = locally verified
+runtime = deployment required
+```
 
 ## Workflow
 

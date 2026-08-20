@@ -159,6 +159,12 @@ payloads, version semantics, identity behavior, or Home runtime contracts.
 
 - One task SHOULD normally implement one issue.
 - MUST NOT silently begin another issue.
+- Substantial autonomous work MUST define an exit criterion before coding and
+  MUST NOT stop at the first green test/build.
+- Substantial autonomous implementation MUST end with an adversarial self-audit
+  and remediation of confirmed BLOCKER/HIGH findings before reporting.
+- Platform-boundary defects MUST be traced to the first confirmed mismatch and
+  classified before any dApp workaround.
 - MUST NOT commit, push, tag, release, deploy, publish, or sign unless the owner
   explicitly requests it.
 - MUST NOT close an issue before all completion requirements and mandatory owner
@@ -189,6 +195,9 @@ Use only scripts actually defined by the project.
 - Necessary sources and guides were read; irrelevant guides were not.
 - Baseline and validation are recorded.
 - Unknown platform behavior is either verified or clearly blocking.
+- The exit criterion is satisfied; any remaining owner/runtime/platform work is
+  stated explicitly and controls the reported status.
+- Adversarial self-audit was completed for substantial work.
 - Final status matches the evidence and remaining owner work.
 
 ## Related files
