@@ -57,5 +57,6 @@ The final response MUST state the exact absolute saved report path.
 Agents MUST NOT invent an alternative report location.
 
 The old workspace-level
-`/home/iffi/VsCodec-Projects/Qortium/agents` directory is not canonical and is
-outside this repository and this migration.
+`/home/iffi/VsCodec-Projects/Qortium/agents` directory was retired after a
+checksummed migration on 2026-08-30. Do not recreate it or route active work to
+historical copies; this repository is the shared authority.
