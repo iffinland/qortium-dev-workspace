@@ -20,8 +20,8 @@ current package/product name is My File Office. Read after
 
 Verified snapshot on 2026-08-30:
 
-- HEAD: `651152e36a429ca44a6889f87b01818395456101`
-  (`fix: replace misleading privacy claims with development notice`)
+- HEAD: `59c0f45321a03801a245604465413a2eb579e895`
+  (`docs: add Workflow v2 guidance and release safety gates`)
 - HEAD equals `origin/main`.
 - Owner changes are present in the dashboard, file service/types, QDN search,
   QDN services, and reference-store implementation/tests. Preserve them.

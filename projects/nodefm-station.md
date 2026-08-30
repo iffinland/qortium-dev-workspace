@@ -22,8 +22,8 @@ router to this canonical workspace.
 
 Verified snapshot on 2026-08-30:
 
-- HEAD: `eb01691899c1eb89e8889bd0ee682e85f4b6433c`
-  (`Improve listener playlists and NodeFM cold-start performance`)
+- HEAD: `6628a658b293f03bd0077f848a0d965314d3c4c4`
+  (`docs: align NodeFM guidance with Workflow v2`)
 - HEAD equals `origin/main`.
 - The working tree contains owner changes across playlist, listener
   submission, request-show, library/cover, scheduling, persistence, tests, and

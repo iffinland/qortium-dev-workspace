@@ -19,11 +19,9 @@ workflow and architecture guides for global rules.
 
 Verified snapshot on 2026-08-30:
 
-- HEAD: `a9f32d41505b6ac857f19ec5000f35d3d633e709`
-  (`Complete Video-Center MVP fixes`)
-- HEAD equals `origin/main`. Application source remains unchanged by the
-  governance migration; the working tree now contains Phase 3 entry/readme/
-  release documentation and Phase 4 deletions of migrated AI reports.
+- HEAD: `ef9232656ff3ce6ba78a38de95be32bdea264be4`
+  (`docs: align project guidance with Workflow v2`)
+- HEAD equals `origin/main`; the working tree is clean.
 - A durable root `README.md` and `docs/RELEASE.md` were added on 2026-08-30.
 - Routes cover home, video detail, channel, following, and publishing.
 

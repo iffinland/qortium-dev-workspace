@@ -21,11 +21,11 @@ this canonical workspace.
 
 Verified snapshot on 2026-08-30:
 
-- HEAD: `f94a10ed29bff905fe1e0a3ee1d7850c8fe11f2a`
-  (`Polish thumbs-up reactions and home post filtering`)
+- HEAD: `8ac557e751e84ebaf99ef13b1b97864af31e649c`
+  (`docs: align project guidance with Workflow v2`)
 - HEAD equals `origin/master`.
 - The working tree contains owner changes in application, localization,
-  blog-service, style, taxonomy, test, and report files. Preserve them.
+  blog-service, style, taxonomy, and test files. Preserve them.
 - A durable root `README.md` and `docs/RELEASE.md` were added on 2026-08-30.
   No `qortium-app.json` was found.
 - Vite uses the relative base `./`.

@@ -21,8 +21,8 @@ remain in the canonical workspace guides.
 
 Verified snapshot on 2026-08-30:
 
-- HEAD: `336eafc532129a156e90b370889b1c3f482200df`
-  (`Fix QDN owner mutations and update project documentation`)
+- HEAD: `cfcd1b7fdb7b7473f6c741ebc38d39474f2125db`
+  (`docs: add canonical Workflow v2 project guidance`)
 - HEAD equals `origin/main`.
 - The working tree contains owner changes across QDN hooks, detail pages,
   domain services, identity, resource, and site-configuration code. Preserve

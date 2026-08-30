@@ -21,8 +21,8 @@ workflow, architecture, and validation rules remain in shared guides.
 
 Verified snapshot on 2026-08-30:
 
-- HEAD: `56dde55d99d9fb6b15d3d7fe9433ace11c81c9c7`
-  (`feat(home): integrate Home text size`)
+- HEAD: `7c68ca9cd1e1221d73cdce77246c1521bdaed27b`
+  (`docs: add canonical Workflow v2 entry and release gates`)
 - HEAD equals `origin/main`.
 - The working tree contains owner changes in rich-text display, layout/sidebar,
   global styles, home/post/project pages, image assets/preview, and tests.

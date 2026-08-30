@@ -50,13 +50,13 @@ identity-sensitive migration.
 ## Current state
 
 - Verified Git snapshot on 2026-08-30:
-  - HEAD: `dd42a2373af0e1a52b9c047acf8689b8daf21d23`
-    (`chore: ignore local build artifacts`);
+  - HEAD: `0a52d5dedd8c1dba7d86e3dad61522bbd527fde1`
+    (`docs: route agents through canonical Workflow v2`);
   - HEAD equals `origin/main`;
   - owner changes are present in tip, thread-action/page, and wallet-service
     files and MUST be preserved.
-  - Phase 3/4 adds the thin root agent entry point and removes migrated copied
-    guides/reports; these documentation changes remain uncommitted locally.
+  - Phase 3/4 entry-point, copied-guide retirement, and report-removal changes
+    are included in the synchronized HEAD above.
 - Current version: `1.5.0-rc.1`
 - Status: Architecture V2 release candidate
 - QAVS manifest: `qortium-app.json`
