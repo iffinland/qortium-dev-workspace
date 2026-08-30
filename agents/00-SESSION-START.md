@@ -130,34 +130,43 @@ payloads, version semantics, identity behavior, or Home runtime contracts.
 
 1. Establish the baseline and preserve existing changes.
 2. Classify the task.
-3. Apply the shared
+3. Apply the canonical
+   [`Qortium Development Workflow v2`](../docs/workflows/workflow-v2.md).
+4. Apply the shared
    [`Qortium dApp Development Standard`](../docs/architecture/qortium-dapp-development-standard.md).
-4. Read only the matching project file and routed guides.
-5. Read the exact issue, prerequisites, relevant source, and current
+5. Read only the matching project file and routed guides.
+6. Read the exact issue, prerequisites, relevant source, and current
    authoritative platform sources.
-6. Separate verified fact, inference, and unknown.
-7. Define scope, out-of-scope work, acceptance criteria, risks, and validation.
-8. Determine the report storage path:
-   - project slug;
-   - `issues/` for issue-scoped work, otherwise report type;
-   - absolute report directory
-     (`/home/iffi/VsCodec-Projects/Qortium/docs/<project-slug>/issues/` for
-     issue work);
-   - expected report filename
-     (`YYYY-MM-DD-<task-or-issue>-<report-type>.md`).
-   See [`docs/workflows/report-storage-policy.md`](../docs/workflows/report-storage-policy.md).
-   If the relevant directory does not exist, the agent may create it when
-   writing the report.
-9. For a major architecture change, present the plan and obtain approval before
-   production implementation.
-10. Implement the smallest coherent change.
-11. Validate at the required levels.
-12. Review the full diff and final working tree.
-13. Report with a truthful completion status.
+7. Separate verified fact, inference, and unknown.
+8. Define one primary objective, its exit criterion, scope, out-of-scope work,
+   acceptance criteria, risks, and validation.
+9. Challenge unsupported premises or an inferior requested method with current
+   evidence and recommend the better bounded alternative.
+10. Determine the report storage path:
+
+- project slug;
+- `issues/` for issue-scoped work, otherwise report type;
+- absolute report directory
+  (`/home/iffi/VsCodec-Projects/Qortium/docs/<project-slug>/issues/` for
+  issue work);
+- expected report filename
+  (`YYYY-MM-DD-<task-or-issue>-<report-type>.md`).
+  See [`docs/workflows/report-storage-policy.md`](../docs/workflows/report-storage-policy.md).
+  If the relevant directory does not exist, the agent may create it when
+  writing the report.
+
+11. For a major architecture change, present the plan and obtain approval before
+    production implementation.
+12. Implement the smallest coherent change.
+13. Validate at the required levels.
+14. Review the full diff and final working tree.
+15. Report with a truthful completion status.
 
 ## Mandatory rules
 
-- One task SHOULD normally implement one issue.
+- One task MUST have one primary objective and exit criterion and SHOULD
+  normally implement one issue. Tightly related findings may share a controller
+  only under Workflow v2's coherent-scope rule.
 - MUST NOT silently begin another issue.
 - Substantial autonomous work MUST define an exit criterion before coding and
   MUST NOT stop at the first green test/build.
@@ -173,6 +182,8 @@ payloads, version semantics, identity behavior, or Home runtime contracts.
 - MUST NOT treat local preview as embedded Home or live QDN validation.
 - MUST NOT treat automated checks, production build, exact artifact creation,
   or agent self-report as proof of live Qortium Home behavior.
+- MUST use applicable available read-only live/SSH evidence as defined by
+  Workflow v2 and MUST report required unavailable evidence truthfully.
 - MUST NOT recommend copying and progressively converting an old Qortal
   codebase for a new Qortium application. Extract requirements, design
   Qortium-native architecture, build cleanly, and migrate only validated needs.
@@ -205,5 +216,7 @@ Use only scripts actually defined by the project.
 - [`01-TASK-CLASSIFICATION.md`](01-TASK-CLASSIFICATION.md)
 - [`README.md`](README.md)
 - [`../docs/architecture/qortium-dapp-development-standard.md`](../docs/architecture/qortium-dapp-development-standard.md)
+- [`../docs/workflows/workflow-v2.md`](../docs/workflows/workflow-v2.md)
+- [`../docs/governance/source-of-truth-and-lifecycle.md`](../docs/governance/source-of-truth-and-lifecycle.md)
 - [`live-qdn-validation.md`](live-qdn-validation.md)
 - [`final-report-and-owner-handoff.md`](final-report-and-owner-handoff.md)

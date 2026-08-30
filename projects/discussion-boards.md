@@ -1,4 +1,4 @@
-# Project — Discssion-Boards
+# Project — Qortium Discussion Boards
 
 ## Purpose
 
@@ -19,6 +19,7 @@ versions, or migration decisions to another project.
 ## Prerequisites
 
 - Repository: `iffinland/Discssion-Boards`
+- Remote: `git@github.com:iffinland/Discssion-Boards.git`
 - Local path:
   `/home/iffi/VsCodec-Projects/Qortium/projects/Discssion-Boards`
 - Primary branch: `main`
@@ -48,6 +49,14 @@ identity-sensitive migration.
 
 ## Current state
 
+- Verified Git snapshot on 2026-08-30:
+  - HEAD: `dd42a2373af0e1a52b9c047acf8689b8daf21d23`
+    (`chore: ignore local build artifacts`);
+  - HEAD equals `origin/main`;
+  - owner changes are present in tip, thread-action/page, and wallet-service
+    files and MUST be preserved.
+  - Phase 3/4 adds the thin root agent entry point and removes migrated copied
+    guides/reports; these documentation changes remain uncommitted locally.
 - Current version: `1.5.0-rc.1`
 - Status: Architecture V2 release candidate
 - QAVS manifest: `qortium-app.json`
@@ -69,6 +78,10 @@ The current source includes:
 - bounded startup diagnostics activated with `?debugStartup=1`;
 - QAVS/release metadata and deterministic release tooling.
 
+The Git facts above are a dated operational snapshot. Re-run the baseline and
+inspect current source before every task; RC status and old audit results are
+not proof of the current dirty tree or live deployment.
+
 ## Architecture and compatibility decisions
 
 - `docs/ARCHITECTURE-V2.md` is the project architecture source.
@@ -81,16 +94,17 @@ The current source includes:
 - Public unencrypted QDN content is not confidential merely because UI access
   is restricted.
 
-## Reference revisions
+## Current reference revisions
 
-The last architecture/release verification recorded:
+Shared workspace references inspected on 2026-08-30:
 
 - Reference repositories: `../../github-clones/qortium-core` and
   `../../github-clones/qortium-home`
 - Qortium Core:
-  `c000a0cd4a1ebaaab5aa753f3cd199f3302ff5bf`
+  `d0da4036263a057d6f1d25356d19427170d8f93b`
 - Qortium Home:
-  `a41e5f9678d7f20d7fb77a223c45fddc0096632e`
+  `927d932bdf29e9641e15519ff0309316ac6afe46`
+  (local owner changes present and behind `origin/main` at inspection)
 
 These commits are traceability points, not frozen capability targets. Before
 every platform-dependent implementation phase, inspect the currently checked
@@ -142,6 +156,12 @@ are `npm run backup:workspace` and `npm run restore:workspace`.
   clipboard, attachments, and applicable operation domains in embedded Home.
 - QDN publication, transaction, moderation, release, and tag actions require
   explicit owner authorization.
+- Use the applicable read-only Core endpoint through the SSH tunnel whenever
+  acceptance depends on live QDN/Core state. The workstation preview endpoint
+  verified during the 2026-08-30 workspace audit was
+  `http://127.0.0.1:24891`; it is environment-specific and MUST be rechecked.
+- Mock/unit/integration tests, local preview, `npm run verify`, and a release
+  artifact do not prove embedded Home or deployed QDN compatibility.
 
 ## Known limitations and advisories
 

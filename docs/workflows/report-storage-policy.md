@@ -33,15 +33,15 @@ type in the filename rather than creating a different directory for each phase.
 For work that is genuinely not tied to an issue, use these report-type
 subdirectories when applicable:
 
-| Directory                                   | Report type                                             |
-| ------------------------------------------- | ------------------------------------------------------- |
-| `docs/<project-slug>/audits/`               | audit reports                                           |
-| `docs/<project-slug>/investigations/`       | investigation reports                                   |
-| `docs/<project-slug>/implementations/`      | implementation reports                                  |
-| `docs/<project-slug>/runtime/`              | runtime diagnostics                                     |
-| `docs/<project-slug>/validation/`           | live-QDN validation reports                             |
-| `docs/<project-slug>/reviews/`              | DeepSeek reviews, Codex reviews                         |
-| `docs/<project-slug>/handoffs/`             | owner handoffs                                          |
+| Directory                              | Report type                     |
+| -------------------------------------- | ------------------------------- |
+| `docs/<project-slug>/audits/`          | audit reports                   |
+| `docs/<project-slug>/investigations/`  | investigation reports           |
+| `docs/<project-slug>/implementations/` | implementation reports          |
+| `docs/<project-slug>/runtime/`         | runtime diagnostics             |
+| `docs/<project-slug>/validation/`      | live-QDN validation reports     |
+| `docs/<project-slug>/reviews/`         | DeepSeek reviews, Codex reviews |
+| `docs/<project-slug>/handoffs/`        | owner handoffs                  |
 
 Also covered by this policy:
 

@@ -1,14 +1,17 @@
-# DeepSeek Primary Work Model — Pilot
+# DeepSeek Primary Work Model
 
-**Pilot period:** 2026-07-27 through 2026-08-10
+**Original pilot period:** 2026-07-27 through 2026-08-10
+
+**Current decision (2026-08-30):** `CONTINUE WITH STRONGER CONTROLS`
 
 ## Purpose
 
-Evaluate DeepSeek as the default cost-efficient local implementation agent for
-routine Qortium development. ChatGPT remains the cross-project architect, task
-planner, GitHub-backed reviewer, and quality gate. Codex becomes an escalation
-and independent-review resource for high-risk, failed, or unusually complex
-work.
+Define DeepSeek as the default cost-efficient local implementation agent for
+routine Qortium development under
+[`Workflow v2`](workflow-v2.md). ChatGPT remains the cross-project architect,
+task planner, GitHub-backed reviewer, and quality gate. Codex remains an
+escalation and independent-review resource for high-risk, failed, or unusually
+complex work.
 
 ## Roles
 
@@ -26,7 +29,8 @@ work.
 
 - default daily local investigator and implementer;
 - documentation, testing, builds, diff review, and handoff;
-- one fresh conversation per issue and one issue at a time;
+- one primary objective and exit criterion per task, normally one fresh
+  conversation per issue;
 - no commit, push, publication, release, issue closure, or other external
   mutation without authorization.
 
@@ -99,7 +103,7 @@ Measure usable, verified development output rather than raw code volume.
 
 ## Pilot decision outcomes
 
-At the end of the pilot, choose one:
+The original decision options were:
 
 - `CONTINUE` — DeepSeek remains the default local implementation agent.
 - `CONTINUE WITH STRONGER CONTROLS` — Keep the model but add constraints.
@@ -107,11 +111,16 @@ At the end of the pilot, choose one:
 - `RETURN SELECTED WORK TO CODEX` — Move specific work back to Codex.
 - `STOP THE MODEL` — Discontinue DeepSeek as a local implementation agent.
 
+The adopted outcome is `CONTINUE WITH STRONGER CONTROLS`. Workflow v2 supplies
+those controls: compact referenced prompts, one bounded objective, evidence
+before implementation, mandatory applicable live/SSH validation, adversarial
+self-audit, truthful completion states, and evidence-based disagreement.
+
 ## Workflow summary
 
 ```
 ChatGPT scopes and reviews
--> fresh DeepSeek conversation for one issue
+-> fresh DeepSeek conversation for one bounded objective (normally one issue)
 -> concrete observed live symptom and expected behavior
 -> production-flow trace and read-only live-node investigation
 -> evidence-based root cause and minimal fix
@@ -124,3 +133,6 @@ ChatGPT scopes and reviews
 DeepSeek prompts MUST NOT over-direct the presumed root cause. They should give
 the observed symptom, expected behavior, relevant issue/context, required
 validation, and forbidden actions.
+
+Use the compact [`TASK-CONTROLLER.md`](../../templates/TASK-CONTROLLER.md) and
+add only a DeepSeek-specific delta when needed.

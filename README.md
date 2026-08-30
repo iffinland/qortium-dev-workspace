@@ -7,6 +7,10 @@ templates, and thin agent role overlays.
 
 The durable cross-project rules are summarized in the
 [Qortium dApp Development Standard](docs/architecture/qortium-dapp-development-standard.md).
+Task execution follows
+[Qortium Development Workflow v2](docs/workflows/workflow-v2.md), and source
+ownership follows
+[Source of Truth and Documentation Lifecycle](docs/governance/source-of-truth-and-lifecycle.md).
 
 ## Knowledge model
 
@@ -55,16 +59,26 @@ qortium-dev-workspace/
 │       ├── CODEX.md
 │       └── DEEPSEEK.md
 ├── projects/
-│   └── discussion-boards.md
+│   ├── blogs.md
+│   ├── community-discussion-boards.md
+│   ├── discussion-boards.md
+│   ├── iffi-vaba-mees.md
+│   ├── my-private-room.md
+│   ├── nodefm-station.md
+│   ├── qortium-united-community.md
+│   └── video-center.md
 ├── docs/
 │   ├── architecture/
 │   │   └── qortium-dapp-development-standard.md
-│   ├── decisions/
+│   ├── governance/
+│   │   └── source-of-truth-and-lifecycle.md
 │   ├── deepseek/
 │   └── workflows/
+│       ├── workflow-v2.md
 │       ├── deepseek-primary-work-model.md
 │       └── report-storage-policy.md
 └── templates/
+    ├── TASK-CONTROLLER.md
     ├── PROJECT-CONTEXT.md
     ├── AUDIT-ISSUE.md
     ├── IMPLEMENTATION-ISSUE.md
@@ -83,8 +97,8 @@ ChatGPT scopes and reviews
 → Codex escalation when required
 ```
 
-The full operating model—including risk levels, escalation rules, and pilot
-measurements—is defined in
+The full agent operating model—including risk levels, escalation rules, and
+historical pilot measurements—is defined in
 [`docs/workflows/deepseek-primary-work-model.md`](docs/workflows/deepseek-primary-work-model.md).
 
 ## Onboarding a project

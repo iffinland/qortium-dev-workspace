@@ -30,6 +30,24 @@ owner explicitly authorized the exact live action.
 - Read-only versus write operations.
 - Expected service/name/identifier and version.
 
+## Qortium Core endpoint
+
+Do not encode one port as a timeless Qortium constant. Current Core source
+defines `14891` as the mainnet API default and `24891` as the testnet/preview
+API default. Qortium Home/runtime configuration may select or override the
+actual endpoint.
+
+Before live-node validation:
+
+1. identify the intended environment;
+2. inspect current Home/Core source or runtime configuration;
+3. verify the endpoint is actually reachable;
+4. record the exact endpoint and environment in the evidence.
+
+Port `12391` is Qortal in the current dual-runtime Home configuration. Agents
+MUST NOT use it as a Qortium endpoint merely by habit. Do not alter Qortal
+documentation where `12391` is correct.
+
 ## Validation levels
 
 ### Level 1 — static and automated
@@ -97,6 +115,14 @@ canonical Qortium dApp Development Standard.
 - A release artifact does not prove deployment.
 - TypeScript, lint, unit tests, mocked integration tests, `npm run verify`,
   production build, and agent self-report do not prove production behavior.
+- MUST use the available read-only SSH tunnel and live Qortium node when the
+  acceptance question concerns QDN/Core state, metadata, identity, discovery,
+  overwrite semantics, persistence, transactions, references, names, wallets,
+  balances, or publication metadata and the endpoint is available or expected
+  to be available. Do not rely on mocks when material live evidence is
+  available.
+- If required live evidence is unavailable, record the missing level and use a
+  truthful non-completion status rather than silently downgrading validation.
 - MUST NOT claim live validation that was not performed.
 - An issue requiring live validation MUST remain open until the owner performs
   and confirms the required live check.
@@ -121,3 +147,4 @@ the tested source/artifact.
 - [`qavs-versioning-and-release.md`](qavs-versioning-and-release.md)
 - [`final-report-and-owner-handoff.md`](final-report-and-owner-handoff.md)
 - [`../docs/architecture/qortium-dapp-development-standard.md`](../docs/architecture/qortium-dapp-development-standard.md)
+- [`../docs/workflows/workflow-v2.md`](../docs/workflows/workflow-v2.md)

@@ -12,6 +12,11 @@ The shared
 is the durable cross-project standard. The files in this directory route and
 apply that standard by task class.
 
+The canonical execution contract is
+[`Qortium Development Workflow v2`](../docs/workflows/workflow-v2.md). Source
+ownership and document lifecycle are defined in
+[`source-of-truth-and-lifecycle.md`](../docs/governance/source-of-truth-and-lifecycle.md).
+
 ## Use when
 
 Start every substantial repository task with
@@ -74,7 +79,14 @@ agents/
     └── DEEPSEEK.md
 
 projects/
-└── discussion-boards.md
+├── blogs.md
+├── community-discussion-boards.md
+├── discussion-boards.md
+├── iffi-vaba-mees.md
+├── my-private-room.md
+├── nodefm-station.md
+├── qortium-united-community.md
+└── video-center.md
 ```
 
 ## Dependency map
@@ -112,6 +124,9 @@ every substantial task
   behavior; automated checks and clean builds are not enough.
 - Project-specific facts MUST stay under the root-level `projects/` directory.
 - One task SHOULD normally implement one issue.
+- Every task MUST have one primary objective and observable exit criterion.
+- Agents MUST challenge unsupported premises or materially inferior requested
+  methods with evidence and recommend the better bounded alternative.
 - Agents MUST NOT commit, push, tag, release, or publish without explicit owner
   authorization.
 - Obsolete Qortal-to-Qortium porting MUST NOT be used as the default new-app

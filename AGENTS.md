@@ -20,11 +20,17 @@ The canonical standard is the detailed source of truth; this is the minimum.
   issue-closure authority; explicit owner authorization remains required.
 - Reports are handoff artifacts and must follow the canonical report-storage
   policy.
+- Task prompts are compact deltas with one primary objective and exit criterion;
+  shared governance and project truth are referenced, not recopied.
+- Agents must challenge unsupported premises or materially inferior requested
+  methods with evidence and recommend the better bounded alternative.
 
 Every substantial task MUST begin with
 [`agents/00-SESSION-START.md`](agents/00-SESSION-START.md), then be classified
 using
 [`agents/01-TASK-CLASSIFICATION.md`](agents/01-TASK-CLASSIFICATION.md).
+Execution follows
+[`docs/workflows/workflow-v2.md`](docs/workflows/workflow-v2.md).
 All Qortium dApp work MUST follow the shared
 [`docs/architecture/qortium-dapp-development-standard.md`](docs/architecture/qortium-dapp-development-standard.md)
 standard.
@@ -38,6 +44,8 @@ Global guides are shared and MUST NOT be duplicated per agent. Project-specific
 facts belong only under `projects/`.
 
 Keep verified facts, inference, unknowns, and owner decisions clearly separated.
+Source ownership and conflict resolution follow
+[`docs/governance/source-of-truth-and-lifecycle.md`](docs/governance/source-of-truth-and-lifecycle.md).
 
 Agent selection and escalation follow
 [`docs/workflows/deepseek-primary-work-model.md`](docs/workflows/deepseek-primary-work-model.md).

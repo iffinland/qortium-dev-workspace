@@ -8,5 +8,11 @@ ChatGPT web access to local uncommitted files is not assumed. It MUST use
 GitHub or structured evidence supplied by a local agent and MUST NOT claim to
 have inspected local files unavailable through a connected source.
 
+ChatGPT MUST apply
+[`Workflow v2`](../../docs/workflows/workflow-v2.md): scope one primary outcome,
+require the applicable non-interchangeable evidence layers, and challenge an
+unsupported premise or materially inferior requested method with concrete
+evidence and a better bounded alternative.
+
 Follow the shared global Qortium guides and the matching root-level project
 context. This overlay adds role constraints; it does not replace those guides.

@@ -1,104 +1,25 @@
-# DeepSeek Task
+# DeepSeek Task Delta
 
-Start this task in a fresh DeepSeek conversation. Assign exactly one issue.
-Describe the observed symptom and expected behavior; do not instruct DeepSeek
-to assume a specific root cause.
+Use the canonical compact
+[`TASK-CONTROLLER.md`](TASK-CONTROLLER.md) with
+[`Workflow v2`](../docs/workflows/workflow-v2.md). Do not copy the full shared
+governance contract into the prompt.
 
-## Repository
-<!-- Exact repository name and remote. -->
+Add only these DeepSeek-specific instructions when they apply:
 
-## Local Path
-<!-- Exact absolute local path. -->
+- start a fresh conversation for the bounded objective, normally one issue;
+- begin from the observed symptom/outcome and expected behavior, not a presumed
+  root cause;
+- trace the real production path to the first confirmed mismatch;
+- use applicable available read-only Core/QDN/SSH evidence;
+- run `npm run verify` when the project defines it;
+- leave required embedded Home or owner live validation pending until actually
+  confirmed;
+- allow one focused correction after a failed owner/live check, then escalate
+  unexplained repetition or a high-risk boundary to ChatGPT/Codex;
+- do not commit, push, publish, deploy, release, close issues, or perform live
+  writes without exact owner authorization.
 
-## Branch and Baseline Commit
-<!-- `git status --short --branch` and `git log -1 --oneline` output. -->
-
-## Owner Request or GitHub Issue
-<!-- Exact owner request text or issue number and URL. -->
-
-## Observed Live Symptom
-<!-- Concrete owner-visible or live-runtime symptom. -->
-
-## Expected Behavior
-<!-- Exact behavior the owner should be able to validate. -->
-
-## Primary Task Class
-<!-- One from the classification list. -->
-
-## Secondary Task Classes
-<!-- Only when technically required. -->
-
-## Project Context
-<!-- Matching `projects/<project>.md` file. -->
-
-## Required Global Guides
-<!-- Only routed guides from the session-start routing table. -->
-
-## Authoritative Home/Core Sources
-<!-- Exact paths and commits for current checked-out Qortium Home and Core. -->
-
-## Verified Starting Facts
-<!-- Facts confirmed from source, not assumed. -->
-
-## Required Production-Flow Trace
-<!-- UI -> state/service -> bridge -> Core/QDN -> parser -> validation -> reducer -> render. -->
-
-## Required Read-Only Live Investigation
-<!-- Core/API, bridge response, QDN resource, transaction/name/wallet/balance evidence, as applicable. -->
-
-## Unknowns and Owner Decisions
-<!-- Explicitly record what is unknown and what requires an owner decision. -->
-
-## Objective
-<!-- One narrow issue only. -->
-
-## Scope
-<!-- Concrete deliverables. -->
-
-## Out of Scope
-<!-- Explicitly excluded work. -->
-
-## Acceptance Criteria
-<!-- Verifiable criteria, each with an evidence source. -->
-
-## Implementation Constraints
-<!-- Non-functional and process constraints. -->
-
-## Required Validation
-<!-- Include npm run verify when defined and owner embedded Qortium Home live validation. -->
-
-## Forbidden Actions
-<!-- Block commit, push, publication, release, issue closure, and live mutation unless explicitly authorized. -->
-
-## Authorizations
-
-| Action                  | Authorized? | Owner/Agent |
-| ----------------------- | ----------- | ----------- |
-| Code edits              |             |             |
-| Documentation edits     |             |             |
-| Tests/build commands    |             |             |
-| Commit                  |             |             |
-| Push                    |             |             |
-| Issue mutation          |             |             |
-| Release/publication/deploy |          |             |
-
-Default all external mutations to forbidden unless explicitly authorized.
-
-## Stop and Escalation Conditions
-<!-- When to stop work and escalate to ChatGPT or Codex. -->
-<!-- If owner/live validation fails once, allow one focused correction in this same session. If it still fails, escalate to Codex. -->
-
-## Report Storage
-- Project slug:
-- Report type (used in filename):
-- Absolute report directory: `/home/iffi/VsCodec-Projects/Qortium/docs/<project-slug>/issues/`
-- Expected report filename:
-- Report creation authorized: Yes
-
-Default `Report creation authorized` to `Yes` unless the owner explicitly
-requests no saved report.
-
-See [`docs/workflows/report-storage-policy.md`](../docs/workflows/report-storage-policy.md).
-
-## Required Final Report
-<!-- Use `final-report-and-owner-handoff.md`. -->
+The task controller MUST state the repository, project context, one objective,
+exit criterion, scope, verified starting evidence, task-specific constraints,
+required validation, external-action authority, and canonical report path.

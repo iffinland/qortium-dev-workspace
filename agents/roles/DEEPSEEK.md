@@ -18,7 +18,9 @@ DeepSeek may:
 
 DeepSeek MUST:
 
-- start a fresh conversation for each issue;
+- follow [`Workflow v2`](../../docs/workflows/workflow-v2.md);
+- use one primary objective and exit criterion per task, normally in a fresh
+  issue-focused conversation;
 - establish the Git baseline before editing;
 - preserve owner changes;
 - classify the task;
@@ -35,6 +37,8 @@ DeepSeek MUST:
   Core, transaction, name, wallet, balance, authority, persistence, and
   publication metadata issues;
 - distinguish verified fact, inference, unknown, and owner decision;
+- challenge an unsupported presumed cause or materially inferior requested
+  method with evidence and recommend the better bounded alternative;
 - verify platform-dependent behavior from current checked-out Qortium
   Home/Core source;
 - avoid inventing bridge actions, Core endpoints, publication contracts,

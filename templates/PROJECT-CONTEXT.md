@@ -9,6 +9,8 @@
 ## Current state
 
 Separate verified state, inference, unknowns, and owner decisions.
+Date operational snapshots and do not present an old Git/worktree state as
+current after the repository advances.
 
 ## QDN identities and services
 
@@ -23,6 +25,9 @@ Record current reference revisions and re-verification requirements.
 ## Key commands
 
 ## Live validation
+
+Record environment-specific endpoints and the verification method. Do not
+encode one runtime port as a timeless Qortium constant.
 
 ## Known limitations
 

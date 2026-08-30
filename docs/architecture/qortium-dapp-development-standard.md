@@ -52,7 +52,16 @@ until the project owner confirms the live result against the intended artifact.
 When a problem concerns QDN resources, resource discovery, bridge responses,
 Core transactions, transaction references, names, wallets, balances, authority,
 persistence, publication metadata, or live reload behavior, use the available
-SSH tunnel and live Qortium Core API whenever practical.
+SSH tunnel and live Qortium Core API. This is mandatory when that evidence is
+material and the endpoint is available or expected to be available.
+
+The endpoint is environment-specific. Current Core source defines separate
+mainnet and testnet/preview defaults, and Home/runtime configuration can select
+or override the endpoint. Agents MUST determine the intended environment,
+verify current source/configuration and actual reachability, and record the
+endpoint used. Port `12391` belongs to Qortal in the current dual-runtime Home
+configuration and MUST NOT be assumed to be a Qortium endpoint. Do not rely on
+mocks when material live evidence is available.
 
 Compare all relevant layers:
 
@@ -91,13 +100,15 @@ must remain `NOT VERIFIED`, not blamed by inference.
 Do not begin from a guessed root cause. Fix the first confirmed mismatch rather
 than patching a downstream symptom.
 
-## 4. One Issue Per Fresh Implementation Conversation
+## 4. One Objective Per Task Controller
 
-Routine implementation work uses:
+Routine implementation work SHOULD normally use one fresh issue-focused
+conversation. Every controller MUST have one primary outcome and one exit
+criterion:
 
 ```text
 fresh conversation
--> one issue only
+-> one objective (normally one issue)
 -> concrete observed live symptom
 -> expected behavior
 -> production-flow trace
@@ -109,8 +120,14 @@ fresh conversation
 -> owner live validation
 ```
 
-Prompts must describe the observed symptom and expected behavior without
-over-directing the presumed root cause.
+Prompts must be compact task-specific deltas. They describe the observed
+symptom or approved outcome and expected behavior without over-directing the
+presumed root cause. Shared governance and project truth are referenced rather
+than copied into every prompt.
+
+Tightly related findings MAY share one controller only when they share domain
+context, acceptance evidence, and regression surface. Unrelated architecture,
+runtime, visual, dependency, release, or cleanup outcomes remain separate.
 
 The implementation agent must not commit, push, publish, release, close issues,
 perform live mutations, or modify unrelated work unless explicitly instructed.
@@ -469,17 +486,17 @@ The final phase report MUST record:
 Plan and report three evidence layers separately:
 
 A. **Automated integrity** — typecheck, unit/integration/contract tests,
-   lint/format, production build, production preview, and any project-defined
-   verify command.
+lint/format, production build, production preview, and any project-defined
+verify command.
 
 B. **Adversarial agent audit** — after implementation, the agent deliberately
-   stops acting as implementer and attempts to invalidate its own work, looking
-   for BLOCKER/HIGH architectural and runtime issues. Confirmed findings are
-   fixed and revalidated. An agent self-report alone is not the audit.
+stops acting as implementer and attempts to invalidate its own work, looking
+for BLOCKER/HIGH architectural and runtime issues. Confirmed findings are
+fixed and revalidated. An agent self-report alone is not the audit.
 
 C. **Owner product/runtime validation** — real embedded Qortium Home use, real
-   user workflows, UX/product correctness, and runtime behavior that tests or
-   source inspection cannot prove.
+user workflows, UX/product correctness, and runtime behavior that tests or
+source inspection cannot prove.
 
 No layer substitutes for another. Owner-found runtime/product defects are
 valuable evidence in their own right; they are not merely missed unit tests.
@@ -495,6 +512,10 @@ prompt, and one patch dozens of times.
 Do not combine unrelated concerns merely to reduce prompt count. The unit of
 autonomous work is coherent engineering scope, not necessarily one bug or one
 roadmap phase.
+
+This does not conflict with the one-objective rule: a coherent controller has
+one primary outcome and exit criterion even when it remediates several tightly
+related findings. It MUST NOT become an unbounded “fix everything” prompt.
 
 After autonomous implementation, treat the owner product audit as an explicit
 cycle: owner runtime/product audit, findings collected and classified by
@@ -568,6 +589,14 @@ This lowers prompt duplication and token cost, reduces contradictory
 instructions, and makes workflow maintenance easier. It must not reduce
 task-specific safety or architecture requirements to ambiguity.
 
+The canonical execution contract and compact controller shape are defined in
+[`Qortium Development Workflow v2`](../workflows/workflow-v2.md).
+
+Agents MUST challenge unsupported premises or a materially inferior requested
+method with current source/runtime evidence and recommend the better bounded
+alternative. Evidence-based disagreement does not authorize scope expansion or
+external mutation.
+
 ## 18. Release-Candidate Independent Audit
 
 For a major release candidate, an independent audit distinct from the primary
@@ -611,4 +640,6 @@ universally superior.
 - [`../../agents/qortium-home-and-bridge.md`](../../agents/qortium-home-and-bridge.md)
 - [`../../agents/qdn-publication-discovery-and-scaling.md`](../../agents/qdn-publication-discovery-and-scaling.md)
 - [`../../agents/live-qdn-validation.md`](../../agents/live-qdn-validation.md)
+- [`Qortium Development Workflow v2`](../workflows/workflow-v2.md)
+- [`source-of-truth lifecycle`](../governance/source-of-truth-and-lifecycle.md)
 - [`primary implementation work model`](../workflows/deepseek-primary-work-model.md)

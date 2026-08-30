@@ -66,7 +66,8 @@ runtime = deployment required
 
 ## Workflow
 
-1. Re-read the owner request and issue acceptance criteria.
+1. Re-read the owner request, Workflow v2 objective/exit criterion, and issue
+   acceptance criteria.
 2. Inspect actual implementation, not planned behavior.
 3. Run required validation and final Git checks.
 4. Separate direct evidence, inference, unavailable evidence, and advisory.
@@ -152,6 +153,7 @@ and live-validation evidence. Ensure all linked local files exist.
 ## Related files
 
 - [`00-SESSION-START.md`](00-SESSION-START.md)
+- [`../docs/workflows/workflow-v2.md`](../docs/workflows/workflow-v2.md)
 - [`live-qdn-validation.md`](live-qdn-validation.md)
 - [`git-generated-files-and-hygiene.md`](git-generated-files-and-hygiene.md)
 - [`../docs/workflows/report-storage-policy.md`](../docs/workflows/report-storage-policy.md)
