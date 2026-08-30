@@ -75,6 +75,12 @@ Distinguish known-not-ready, building/downloading, ready, missing, malformed,
 timeout, and unavailable. Readiness polling and build triggers MUST be bounded.
 Missing-resource quarantine/caches MUST expire or be invalidatable.
 
+A temporarily unavailable resource MUST NOT be treated as permanently invalid.
+Retry/backoff state SHOULD distinguish transient unavailability, repeated
+unavailability, structural invalidity, and explicit rejection/quarantine. Use
+bounded cooldown/backoff and later re-evaluation rather than permanent
+blacklisting unless permanent invalidity is proven.
+
 ### 7. Reduce deterministically
 
 Order by trusted QDN/Core metadata and deterministic tie-breakers. Define
@@ -119,6 +125,10 @@ resource as a separate transaction and returns independent `published` and
 `failures` arrays. Treat partial success explicitly. Do not describe this UI
 grouping as application-level or transaction-level atomicity. See the canonical
 standard for the verified request and response contract.
+
+For live publication diagnosis, prefer one owner-authorized controlled test
+with recorded identifiers and results. Do not repeat speculative publish
+attempts that can leave orphan resources or ambiguous transactions.
 
 ### 10. Plan scale tests
 
