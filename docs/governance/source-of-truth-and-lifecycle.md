@@ -23,15 +23,19 @@ Runtime evidence proves what the observed environment did. It does not prove
 that a different source revision or deployed artifact behaves identically.
 Record provenance when the distinction matters.
 
-### Project behavior and decisions
+### Project implemented behavior
 
 Use this order:
 
 1. current project source and Git history;
 2. durable project documentation in the application repository;
 3. `projects/<project-slug>.md` in this repository;
-4. documented owner decisions;
-5. historical task reports.
+4. historical task reports.
+
+Owner decisions govern desired product behavior and authorization, separately
+from this factual source order. Existing code cannot overrule owner intent;
+report implementation gaps and verify platform feasibility. Shared coordination
+roles and handoff follow `/home/iffi/VsCodec-Projects/AI-Orchestration/AGENTS.md`.
 
 Project context summarizes verified current facts and routing. It MUST NOT
 override current source, and stale snapshots MUST be dated and labeled.

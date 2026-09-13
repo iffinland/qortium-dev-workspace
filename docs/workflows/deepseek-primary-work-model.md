@@ -1,5 +1,13 @@
 # DeepSeek Primary Work Model
 
+## Universal coordination (2026-09-13)
+
+Read `/home/iffi/VsCodec-Projects/AI-Orchestration/AGENTS.md` first.
+It owns shared roles (including Codex Local orchestration), agent branches,
+GitHub handoff and reference freshness. This workspace retains platform-specific
+execution and evidence rules. Older role summaries below are platform overlays;
+they do not override that shared coordination contract.
+
 **Original pilot period:** 2026-07-27 through 2026-08-10
 
 **Current decision (2026-08-30):** `CONTINUE WITH STRONGER CONTROLS`

@@ -1,5 +1,13 @@
 # Qortium Development Orchestration
 
+## Universal coordination (2026-09-13)
+
+Read `/home/iffi/VsCodec-Projects/AI-Orchestration/AGENTS.md` first.
+It owns shared roles (including Codex Local orchestration), agent branches,
+GitHub handoff and reference freshness. This workspace retains platform-specific
+execution and evidence rules. Older role summaries below are platform overlays;
+they do not override that shared coordination contract.
+
 This repository is the canonical shared control and knowledge repository for
 Qortium development. It contains documentation and workflows, not project
 source code or secrets.
